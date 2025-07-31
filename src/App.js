@@ -38,7 +38,7 @@ function App() {
         {/* Valeur actuelle */}
         <div className="value-box">
           <p>Valeur actuelle</p>
-          <p className="fs12">*Face du haut</p>
+          <span className="fs12">*Face du haut</span>
           <div className="value-display">{value}</div>
         </div>
 
