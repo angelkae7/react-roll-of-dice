@@ -59,7 +59,7 @@ function App() {
           </div>
           <ul>
             {history.map((v, i) => (
-              <li key={i}>Lancé [{history.length - i}] : {v}</li>
+              <li key={i}>Lancer [{history.length - i}] : {v}</li>
             ))}
           </ul>
         </div>
