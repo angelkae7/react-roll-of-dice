@@ -37,13 +37,14 @@ function App() {
       <div className="main-layout">
         {/* Valeur actuelle */}
         <div className="value-box">
-          <p>Valeur<br />actuelle</p>
+          <p>Valeur actuelle</p>
+          <p className="fs12">*Face du haut</p>
           <div className="value-display">{value}</div>
         </div>
 
         {/* Dé 3D */}
         <div className="dice-canvas">
-          <Canvas camera={{ position: [3, 3, 3] }}>
+          <Canvas camera={{ position: [2, 2, 2] }}>
             <ambientLight intensity={0.5} />
             <directionalLight position={[5, 5, 5]} />
             <Dice value={value} />

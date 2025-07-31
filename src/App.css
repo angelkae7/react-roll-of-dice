@@ -4,6 +4,10 @@ body {
   background-color: #f1f5f9;
 }
 
+.fs12 {
+  font-size: 7px;
+}
+
 .container {
   text-align: center;
   padding: 30px;
