@@ -15,7 +15,7 @@ export default function Dice({ value }) {
     '/textures/dice6.png',
   ]);
 
-  textures.forEach(tex => tex.colorSpace = THREE.SRGBColorSpace);
+  textures.forEach(tex => tex.colorSpace = THREE.SRGBColorSpace); 
 
   const materials = [
     new THREE.MeshStandardMaterial({ map: textures[2] }),
