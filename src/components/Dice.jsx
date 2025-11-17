@@ -2,7 +2,20 @@ import { useLoader, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useEffect, useRef } from 'react';
 
- const textures = useLoader(THREE.TextureLoader, [
+  const rotationMap = {
+    1: [0, 0, 0],
+    2: [Math.PI, 0, 0],
+    3: [0, 0, Math.PI / 2],
+    4: [0, 0, -Math.PI / 2],
+    5: [-Math.PI / 2, 0, 0],
+    6: [Math.PI / 2, 0, 0],
+  };
+
+export default function Dice({ value }) {
+  const mesh = useRef();
+  const targetRotation = useRef(new THREE.Euler());
+
+  const textures = useLoader(THREE.TextureLoader, [
     '/textures/dice1.png',
     '/textures/dice2.png',
     '/textures/dice3.png',
@@ -10,12 +23,6 @@ import { useEffect, useRef } from 'react';
     '/textures/dice5.png',
     '/textures/dice6.png',
   ]);
-
-export default function Dice({ value }) {
-  const mesh = useRef();
-  const targetRotation = useRef(new THREE.Euler());
-
- 
 
   textures.forEach(tex => tex.colorSpace = THREE.SRGBColorSpace); 
 
@@ -28,14 +35,7 @@ export default function Dice({ value }) {
     new THREE.MeshStandardMaterial({ map: textures[5] }),
   ];
 
-  const rotationMap = {
-    1: [0, 0, 0],
-    2: [Math.PI, 0, 0],
-    3: [0, 0, Math.PI / 2],
-    4: [0, 0, -Math.PI / 2],
-    5: [-Math.PI / 2, 0, 0],
-    6: [Math.PI / 2, 0, 0],
-  };
+
 
   useEffect(() => {
     const [rx, ry, rz] = rotationMap[value];
