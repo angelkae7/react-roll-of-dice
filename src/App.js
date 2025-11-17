@@ -28,7 +28,7 @@ function App() {
     if (history.length > 0) {
       setValue(history[0]);
     }
-  }, []);
+  }, [history]);
 
   return (
     <div className="container">

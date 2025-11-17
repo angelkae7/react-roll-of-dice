@@ -2,11 +2,7 @@ import { useLoader, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useEffect, useRef } from 'react';
 
-export default function Dice({ value }) {
-  const mesh = useRef();
-  const targetRotation = useRef(new THREE.Euler());
-
-  const textures = useLoader(THREE.TextureLoader, [
+ const textures = useLoader(THREE.TextureLoader, [
     '/textures/dice1.png',
     '/textures/dice2.png',
     '/textures/dice3.png',
@@ -14,6 +10,12 @@ export default function Dice({ value }) {
     '/textures/dice5.png',
     '/textures/dice6.png',
   ]);
+
+export default function Dice({ value }) {
+  const mesh = useRef();
+  const targetRotation = useRef(new THREE.Euler());
+
+ 
 
   textures.forEach(tex => tex.colorSpace = THREE.SRGBColorSpace); 
 
